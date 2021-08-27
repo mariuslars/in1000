@@ -1,7 +1,7 @@
 '''
-Dette programmet gjør:
-- Slår sammen to navn 
-- Beregner differanse av to tilfeldige heltall
+Dette programmet:
+- Slår sammen to navn gitt av bruker
+- Beregner differanse av to statiske heltall
 '''
 navn = input("Vennligst oppgi navn:")
 print("hei " + navn)
@@ -14,7 +14,7 @@ print(second_integer)
 
 difference = first_integer - second_integer
 
-#Konverter integer til string for å kunne concat
+#Konverter integer til string for å kunne concatenate
 print("Differanse:" + str(difference))
 
 nytt_navn = input("Vennligst oppgi nytt navn:")
