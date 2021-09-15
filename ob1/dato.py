@@ -15,7 +15,8 @@ print(f'du har registrert: {second_day} {second_month}')
 first_day, first_month = int(first_day), int(first_month)
 second_day, second_month = int(second_day), int(second_month)
 
-
+#Vurder først om det er forskjell i måneden. Da trenger man ikke vurdere dag
+#Hvis en måned ikke er større eller mindre enn den andre antar jeg at månedene er like
 if first_month < second_month:
     print("Riktig rekkefølge!")
 elif first_month > second_month: 
