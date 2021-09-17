@@ -18,11 +18,11 @@ for tall in list_integers:
     add_result = adder(tall[0], tall[1])
     print(tall[0], "+", tall[1], "=", add_result)
     
-#2., 3. 
+#2., 3.  
 
 def tellForekomst(minTekst, minBokstav):
 
-    #Initiate letter counter. Will increase by one each time the letter is in the sentence
+    ##Initiate letter counter. Will increase by one each time the letter is in the sentence
     point_counter = 0
     #for letter in range(len(minTekst)):
     for letter in minTekst:
