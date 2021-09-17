@@ -24,7 +24,7 @@ def tellForekomst(minTekst, minBokstav):
 
     ##Initiate letter counter. Will increase by one each time the letter is in the sentence
     point_counter = 0
-    #for letter in range(len(minTekst)):
+    
     for letter in minTekst:
     #Hvis den oppgitte bokstaven er i strengen, pluss på én i counter
         if(minBokstav in letter):
