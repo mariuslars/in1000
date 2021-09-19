@@ -8,11 +8,15 @@ Dette programmet:
 
 #1.)
 def finn_antall_bokstaver(ord):
+    #Finner og returnerer antall bokstaver i et ord
     return(len(ord))
 
 #2.)
 def generer_ordbok(setning):
-
+    """ 
+    Returnerer en ordbok hvor ordet i setningen er key og antall forekomster av dette er value
+    Input er en setning som string
+    """
     setning_liste = setning.split(" ")
 
     #Konverterer listen til mengde for å kun beholde unike ord. 
@@ -65,7 +69,7 @@ def analysis_user_sentence(sentence):
         dynamic_bokstav_string = "bokstaver"
         if(word_length == 1):
             dynamic_bokstav_string = "bokstav"
-            
+
         dynamic_gang_string = "ganger"
         if(number_occurrence == 1):
             dynamic_gang_string = "gang"
