@@ -8,7 +8,7 @@ klesplagg = []
 avreisedatoer = []
 
 #Bruk for å teste program raskere. Sett 5 for å oppfylle krav for oblig
-number_of_inputs = 2
+number_of_inputs = 5
 
 for i in range(number_of_inputs):
 
