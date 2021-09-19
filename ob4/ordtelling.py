@@ -46,7 +46,7 @@ def generer_ordbok(setning):
 
 #3.)
 
-def analysis_user_sentence(sentence):
+def analyse_user_sentence(sentence):
 
     #Do analysis of sentence and print results
     sentence_list = sentence.split()
@@ -81,4 +81,4 @@ def analysis_user_sentence(sentence):
 
 user_input = input("Skriv inn en setning: ")
 
-analysis_user_sentence(user_input)
+analyse_user_sentence(user_input)
