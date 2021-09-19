@@ -1,12 +1,15 @@
 """
 Egenkomponert oppgave:
-Skriv et program som legger til og skriver ut venners bursdag
+Skriv et program som kan legge til og hente ut venners bursdag
     - Bursdagene skal lagres i en tabell, for eksempel en .txt-fil.
-        - Det skal være mulig å skrive til denne tabellen slik at bursdagene blir lagret  
+        - Det skal være mulig å skrive til denne tabellen slik at bursdagene blir lagret
+        - Formatet på tabellen og strukturen på bursdagene er valgfritt
     - Anta at det allerde er to bursdager i tabellen din.
     - La brukeren velge om vedkommende vil hente ut bursdag, legge til bursdag, eller avslutte programmet
 """
-def read_bursdager():
+def read_birthdays():
+    #Henter tabellen fra disk inn i minnet
+    #Konverterer tabellen til en liste med lister hvor navn og bursdager er i hver sin liste
     bursdager_dict = open("bursdager.txt")
 
     read_navn = []
@@ -21,22 +24,22 @@ def read_bursdager():
 
     return navn_bursdag_list
 
-def convert_text_to_dict(navn, bursdag):
-    
-    bursdager_ordbok = dict(zip(list(navn), list(bursdag)))
+def convert_text_to_dict(key_name, value_bursdag):
+    #Converterer to lister til en ordbok i key-value format
+
+    bursdager_ordbok = dict(zip(list(key_name), list(value_bursdag)))
 
     return bursdager_ordbok
 
 
 def extract_birthday(birthday_dictionary, navn):
+    #Henter ut value fra ordbok
 
     return birthday_dictionary[navn]
 
-def write_to_dict(birthday_dictionary, key, value):
-    
-    birthday_dictionary[key] = value
-
 def write_to_birthday_table(birthday_dictionary, new_name_input, new_birthday_input):
+    #Åpner og skriver alle bursdager i ordboken til tabellen/.txt-filen.
+    #TODO: Skriv kun entries som allerede ikke er i ordboken
     
     birthday_dictionary[new_name_input] = new_birthday_input
             
@@ -53,15 +56,19 @@ def write_to_birthday_table(birthday_dictionary, new_name_input, new_birthday_in
             f.write("%s\n" % birthday_entry)
         f.close()
 
-def run_program():
+def manage_birthdays():
 
-    bursdager_liste = read_bursdager()
+    #Leser tabellen fra disk inn i minnet
+    bursdager_liste = read_birthdays()
 
+    #Genrerer bursdagsordboken
     birthdays = convert_text_to_dict(bursdager_liste[0], bursdager_liste[1])
 
-    current_names_in_dictionary = birthdays.keys()
+    names_in_dictionary = birthdays.keys()
 
+    #Run condition for while loop
     active_conditional_outer = True
+
     while active_conditional_outer:
 
         print("Velg hva du vil gjøre")
@@ -72,17 +79,20 @@ def run_program():
         user_input = input("Velg handling: ")
 
         if(user_input == "0"):
+            #Bruker ønsker å hente ut bursdag fra valg person
 
+            #Run condition for while loop
             active_conditional_inner = True
             
+            #Ekstra inner while i tilfelle bruker skriver inn et navn som ikke er i oversikten
             while active_conditional_inner:
                 
                 #Skriver informasjon fra listen til bruker
                 print("Følgende personer er i listen din: ")
-                [print(name) for name in current_names_in_dictionary]
+                [print(name) for name in names_in_dictionary]
                 user_input_name = input("Skriv navnet til vedkommende du ønsker å hente bursdag fra: ")
 
-                if(user_input_name not in current_names_in_dictionary):
+                if(user_input_name not in names_in_dictionary):
                     print("\nDette navnet er ikke tilgjengelig. Prøv igjen\n")
                     continue
 
@@ -91,7 +101,7 @@ def run_program():
                 active_conditional_outer = active_conditional_inner = False
         
         elif(user_input == "1"):
-
+            #Hvis bruker ønsker å legge til bursdag i oversikten
             new_name = input("Skriv navnet til personen du ønsker å legge til: ")
             new_birthday = input("Skriv bursdagen til personen: ")
 
@@ -113,4 +123,4 @@ def run_program():
     
 
 
-run_program()
+manage_birthdays()
