@@ -51,10 +51,10 @@ def write_to_birthday_table(birthday_dictionary, new_name_input, new_birthday_in
 
     #Use open with argument "w" to write to file
     #Add \n in write to add new lines
-    with open("bursdager.txt", "w") as f:
+    with open("bursdager.txt", "w") as birthday_file:
         for birthday_entry in strings_to_write:
-            f.write("%s\n" % birthday_entry)
-        f.close()
+            birthday_file.write("%s\n" % birthday_entry)
+        birthday_file.close()
 
 def manage_birthdays():
 
