@@ -54,13 +54,14 @@ print(tommerTilCm(1))
 
 def skrivBeregninger():
 
-    input_1, input_2 = float(input("skriv in to tall, separert med ',' (komma) som skal adderes, subtraheres, og divideres: ").split(","))
-    
-    print(addisjon(input_1, input_2))
-    print(subtraksjon(input_1, input_2))
-    print(divisjon(input_1, input_2))
+    input_1, input_2 = map(float, input("skriv in to tall, separert med ',' (komma) som skal adderes, subtraheres, og divideres: ").split(","))
+
+    print("Resultat av summering: ", addisjon(input_1, input_2))
+    print("Resultat av subtraksjon: ", subtraksjon(input_1, input_2))
+    print("Resutlat av divisjon: ", divisjon(input_1, input_2))
 
     input_tommer = float(input("skriv inn et tall som skal konverteres fra tommer til centimeter: "))
 
-    print(tommerTilCm(input_tommer))
+    print("Resultat: ", tommerTilCm(input_tommer))
 
+skrivBeregninger()
