@@ -2,20 +2,6 @@
 """
 1.)
 """
-""" def lagBrukernavn(navn):
-
-    
-    navn_lower = navn.lower()
-
-    #Split in two steps in case of names with middle names etc
-    navn_split = navn_lower.split(" ")
-    #Just use the first two names
-    first_name, last_name = navn_split[0:2]
-
-    user_name = f'{first_name}{last_name[0]}'
-
-    return(user_name) """
-
 def lagBrukernavn(navn, ordbok):
 
     
@@ -63,14 +49,9 @@ def lagEpost(brukernavn, suffix):
 
 def skrivUtEposter(brukernavn_ordbok):
 
-    #epost_liste = []
 
     for brukernavn in brukernavn_ordbok.keys():
         print(lagEpost(brukernavn, brukernavn_ordbok[brukernavn]))
-
-    #print(epost_liste)
-
-    #return(epost_liste)
 
 
 """
@@ -88,7 +69,7 @@ while user_input != "s":
     if user_input == "i":
         
         name_input, suffix_input_raw = input("Skriv inn navn og epost-suffix. Separer dem med komma (,): ").split(",")
-        #Fjerner eventuelt whitespace forran suffix
+        #Fjerner eventuelt whitespace foran suffix
         suffix_input = suffix_input_raw.strip()
 
         username_input = lagBrukernavn(name_input, tom_ordbok)
