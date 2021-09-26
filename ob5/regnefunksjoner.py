@@ -1,5 +1,6 @@
 """
 Dette programmet:
+- Regner ut ting og tang
 """
 
 #1.)
