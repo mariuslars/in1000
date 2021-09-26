@@ -58,27 +58,28 @@ def skrivUtEposter(brukernavn_ordbok):
 4.)
 """
 
+def register_username():
+    tom_ordbok = {}
+    user_input = "default"
 
-tom_ordbok = {}
-user_input = "default"
+    while user_input != "s":
 
-while user_input != "s":
+        user_input = input("Velg 'i' for å skrive inn navn og suffix. 'p' for å skrive ut epostene i ordboken. Velg 's' for å avslutte: ")
 
-    user_input = input("Velg 'i' for å skrive inn navn og suffix. 'p' for å skrive ut epostene i ordboken. Velg 's' for å avslutte: ")
+        if user_input == "i":
+            
+            name_input, suffix_input_raw = input("Skriv inn navn og epost-suffix. Separer dem med komma (,): ").split(",")
+            #Fjerner eventuelt whitespace foran suffix
+            suffix_input = suffix_input_raw.strip()
 
-    if user_input == "i":
+            username_input = lagBrukernavn(name_input, tom_ordbok)
+
+            tom_ordbok[username_input] = suffix_input
         
-        name_input, suffix_input_raw = input("Skriv inn navn og epost-suffix. Separer dem med komma (,): ").split(",")
-        #Fjerner eventuelt whitespace foran suffix
-        suffix_input = suffix_input_raw.strip()
+        if user_input == "p":
+            skrivUtEposter(tom_ordbok)
 
-        username_input = lagBrukernavn(name_input, tom_ordbok)
-
-        tom_ordbok[username_input] = suffix_input
-    
-    if user_input == "p":
-        skrivUtEposter(tom_ordbok)
-
+register_username()
 
 
 """
