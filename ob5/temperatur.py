@@ -89,26 +89,14 @@ def findHeatWave():
 
 findHeatWave()
 
-"""
-asd
-"""
+
 """ 
 def write_max_temperatures:
 
 
-    with open("bursdager.txt", "w") as birthday_file:
-        for birthday_entry in strings_to_write:
-            birthday_file.write("%s\n" % birthday_entry)
-        birthday_file.close() 
+    with open("max_temperatures_per_month_updated.csv", "w") as updated_max_temps:
+        for temperature_entry in temperature_strings_to_write:
+            updated_max_temps.write("%s\n" % temperature_entry)
+        updated_max_temps.close() 
 """
 
-
-""" 
-Lag en prosedyrer som tar inn to argumenter: En ordbok med de varmeste
-temperaturene (som laget av funksjonen i steg 1), og et filnavn for en fil som
-inneholder daglige temperaturer. Denne prosedyren skal lese de daglige
-temperaturen linje for linje. Hvis temperaturen for en dag er høyere enn temperaturen
-som finnes i ordboken skal det skrives ut en beskjed til terminalen. Eksempel: Ny
-varmerekord på 30 mai: 31.1 grader Celcius (gammel varmerekord var 29.8 grader
-Celcius). Kall prosedyren med to argumenter, en ordbok med de varmeste
-temperaturene per måned, og filen som heter "max_daily_temperature_2018.csv" """
