@@ -1,4 +1,11 @@
 """
+Dette programmet:
+- Definerer funksjoner for å lese og skrive .csv-filer med temperaturer
+- Definerer en funksjon som identifiserer varmebølger
+- Definerer en funksjon som identifiserer om en ny max-rekord har funnet sted og erstatter den gamle rekorden.
+"""
+
+"""
 1.)
 """
 
