@@ -18,8 +18,11 @@ def read_max_temperatures(file_path):
     for line in opened_file:
         raw_string = line.split(",")
         lines_months.append(raw_string[0])
-        #Husk å fjerne tegnet for newline som blir lest inn
-        lines_temperatures.append(float(raw_string[1].rstrip("\n")))
+
+        #Fjerner tegnet for newline som blir lest inn
+        raw_string_stripped = raw_string[1].rstrip("\n")
+        
+        lines_temperatures.append(float(raw_string_stripped))
         
     file_dictionary = dict(zip(lines_months, lines_temperatures))
 
@@ -34,6 +37,7 @@ def evaluate_maximum(max_dictionary, file_path):
 
     opened_file = open(file_path)
 
+    #Iterate through each line in the file
     for line in opened_file:
         list_strings = line.split(",")
         month = list_strings[0]

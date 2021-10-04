@@ -9,24 +9,32 @@ def lagBrukernavn(navn, ordbok):
 
     #Split in two steps in case of names with middle names etc
     navn_split = navn_lower.split(" ")
-    #Just use the first two names
+
+    #Just extract the first two names in case user has several names
     first_name, last_name = navn_split[0:2]
 
+    #Add only first letter from last name to user_name using [0]
     user_name = f'{first_name}{last_name[0]}'
 
     """
     6. bonus)
     """
+    #Check if the username already exist. If it does, add one more letter
     user_name_exists = user_name in ordbok.keys()
+
     #Iterator for how many letters should be extracted form last name.
+    #Defaults to two letter as the while loop is conditional on the username with only the first letter exists
     final_character = 2
+
     while user_name_exists:
         user_name = f'{first_name}{last_name[0:final_character]}'
 
+        #Add numbers of characters from the last name until the user_name_exists == False
         final_character += 1
 
         user_name_exists = user_name in ordbok.keys()
 
+        #TODO: when all characters from last name is exhausted, should use new rule to generate more
 
     return(user_name)
 

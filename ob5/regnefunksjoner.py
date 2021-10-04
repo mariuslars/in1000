@@ -1,6 +1,7 @@
 """
 Dette programmet:
-- Regner ut ting og tang
+- Definerer funksjoner og tester for addiskjon, subtraksjon og divisjon
+- definerer funksjon for å konvertere tommer til centimeter
 """
 
 #1.)
