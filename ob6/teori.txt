@@ -1,0 +1,12 @@
+
+#1)
+
+Innkapsling er en teknik for å sørge for at kun metoden til en klasse kan påvirke dette objeketet. Følgelig kan ikke forsøk på å endre objektet fra utsiden påvirke dens egenskaper. 
+
+#2)
+
+Objektets grensesnitt er settet med metoder som kan kalles for å gjøre endringer i objektet. Implementasjonen av en klasse er inneholdet i grensesnittet.
+
+#3)
+
+En instansmetode er en metode som gjør en handling på et objekt. Dette skiller seg fra en prosedyre/funksjon ved at metoden kan kun operere på et objekt med riktig klasse definert i metoden. En prosedyre/funksjon er mer generell og kan operere på hvilken som helst klasse. Videre er objektet et argument i en prosedyre/funksjon, det er det ikke i en metode.
