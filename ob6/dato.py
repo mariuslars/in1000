@@ -1,3 +1,8 @@
+"""
+Dette programmet:
+- Definerer klassen Dato og metoder for denne
+"""
+
 class Dato:
 
     def __init__(self, nyDag, nyMaaned, nyttAar):

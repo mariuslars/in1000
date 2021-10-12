@@ -1,3 +1,8 @@
+"""
+Dette programmet: 
+- Tester om metodene til Dato virker som de skal
+"""
+
 from dato import Dato
 
 def hovedprogram():
