@@ -1,3 +1,7 @@
+"""
+Dette programmet:
+- Etablerer en klasse Spilleliste og metoder for denne
+"""
 from sang import Sang
 
 class Spilleliste:
@@ -18,7 +22,7 @@ class Spilleliste:
 
         
 
-
+    #Metode for å lese sanger fra fil og legge til instansevariabelen sanger i spillelisten
     def lesFraFil(self, filnavn):
 
         #Åpner fil på standard måte
@@ -30,11 +34,13 @@ class Spilleliste:
             #Legger til Sang objekter i spillelisten
             self._sanger.append(Sang(alleData[1], alleData[0]))
 
+    #Legger til én sang i spillelisten i Spilleliste
     def leggTilSang(self, nySang):
 
         
         self._sanger.append(nySang)
 
+    #Fjerner første sang som matcher oppgitt sang fra instansevariabel-listen
     def fjernSang(self, sang):
 
         keep_sang_list = []
@@ -47,29 +53,31 @@ class Spilleliste:
 
         self._sanger = keep_sang_list
 
+    #Wrapper for spill i Sang
     def spillSang(self, sang):
 
-        
         sang.spill()
 
+
+    #Spill hele spillelistne
     def spillAlle(self):
 
         for sang in self._sanger:
 
             sang.spill()
 
-    
+    #Returnerer Sang hvis oppgitt tittel eksisterer    
     def finnSang(self, tittel):
 
         for sang in self._sanger:
             
             if sang.sjekkTittel(tittel):
 
-                return(str(sang))
+                return(sang)
 
         return None
 
-
+    #Hent alle sangern til valgt artist
     def hentArtistUtvalg(self, artistnavn):
             
             artist_liste_sanger = []
@@ -77,41 +85,10 @@ class Spilleliste:
 
                 if sang.sjekkArtist(artistnavn):
 
-                    artist_liste_sanger.append(str(sang))
+                    artist_liste_sanger.append(sang)
 
             return artist_liste_sanger
 
 
     
 
-tester = Spilleliste("Listenavn")
-tester.lesFraFil("musikk.txt")
-
-
-
-print("Print object: ")
-print(tester)
-
-sang1 = Sang("Bon Iver", "The Great River")
-tester.leggTilSang(sang1)
-
-print("Printer etter å ha lagt til sang: ")
-print(tester)
-
-
-print("-----------------------------------------------")
-print("Printer resultat av sang som ikke er funnet: ")
-funnet_sang_ikke = tester.finnSang("GoiNG for the oned")
-
-print(funnet_sang_ikke)
-funnet_sang = tester.finnSang("GoiNG for the one")
-print("Dette er sang som er funnet: ",funnet_sang)
-
-print("Fjerner sangen over: ")
-tester.fjernSang(funnet_sang)
-
-print(tester)
-
-tester.spillAlle()
-print(Sang("Queen of", "LOL").sjekkArtist("qudeen of d"))
-print(tester.hentArtistUtvalg("iver"))

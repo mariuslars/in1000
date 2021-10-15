@@ -32,5 +32,5 @@ def hovedprogram():
     assert(sang1.sjekkArtistOgTittel('Bradley Cooper', 'Shallow')) 
     print("Tester sjekkArtistOgTittel med 'Booper' og 'Shallow'")			# False
     assert(not sang1.sjekkArtistOgTittel('Booper', 'Shallow')) 
-    
+    print("LOL")
 hovedprogram()
