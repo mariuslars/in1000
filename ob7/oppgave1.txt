@@ -1,0 +1,22 @@
+1.
+
+Se oppgave1_tegning_datastruktur_spillelistetester.pdf
+
+2.
+
+- Ordbok måtte ha oppbevart artistnavn som key i tillegg til å oppbevare artistnavn i objektene. Unødvendig plass. 
+- Liste har støtte for (sang)rekkefølge. Følgelig er den bedre egnet for en spilleliste, 
+som enten ønskes å spilles i én bestemt rekkefølge, shuffle, eller andre måter hvor rekkefølgen er relevant. 
+For å løse tilsvarende for dict er det behov for mye mer intrikat kode.
+
+3.
+
+- Ved å lese inn spillelisten med filnavn-parameter hver gang en Spilleliste vil hver spilleliste alltid inneholde sangene i filen. 
+Dette er ikke nødvendigvis ønskelig. For å lage en egendefinert spilleliste uten disse sangene måtte bruker ha fjernet disse sangene
+hver gang en ny spilleliste hadde blitt opprettet. Følgelig er metoden hvor konstruktør genererer en tom liste mer generell og fleksibel.
+
+4. 
+
+- I lesFraFil(self, filnavn) leses sangene inn linje for linje og lagres i en liste med to verdier, 0 og 1 for hver iterasjon. 
+Deretter legges sanger til spillelisten ved Sang(liste[1], liste[0]). Hvis rekkefølgen endres i datafilen må oppretting av Sang-objektet
+gjøres med motsatt verdier slik at det blir Sang(liste[0], liste[1]).
