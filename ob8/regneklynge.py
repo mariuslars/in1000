@@ -19,7 +19,7 @@ class Regneklynge:
         klyngeLengde = len(self._regneklyngeListe)
 
         #Hvis regneklyngen ikke inneholder noen Racks må vi legge til én Rack
-        #Kan ansees som init av regneklynge
+        #Kan ansees som init av regneklynge med innhold
         if klyngeLengde == 0:
             init_rack = Rack()
             self._regneklyngeListe.append(init_rack)
@@ -39,9 +39,9 @@ class Regneklynge:
             #Hvis siste Rack ikke har færre antall noder enn maksNoder må vi sette inn nytt Rack
             #Etablerer tomt nytt rack
             nyttRack = Rack()
-            #Legger nytt rack med node inn i regneklyngen. append legger automatisk til sist
+            #Legger nytt tomt rack inn i regneklyngen. append legger automatisk til sist
             self._regneklyngeListe.append(nyttRack)
-            #Setter inn noden i siste Rack
+            #Setter inn noden i siste tomme Rack
             self._regneklyngeListe[-1].settInn(node)
             
 
@@ -69,8 +69,8 @@ class Regneklynge:
 
         noderMedNokMinneCounter = 0
 
+        #Itererer gjennom Racks in regneklyngen og summerer opp alle prosessorer
         for rack in self._regneklyngeListe:
-
             noderMedNokMinneCounter += rack.noderMedNokMinne(paakrevdMinne)
 
         return noderMedNokMinneCounter

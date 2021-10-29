@@ -1,6 +1,7 @@
 from node import Node
 from regneklynge import Regneklynge
 from rack import Rack
+from datasenter import Datasenter
 
 def testFun():
     #############################
@@ -47,6 +48,10 @@ def testFun():
     assert rack2.noderMedNokMinne(10) == 2, "Feilet på noderMedNokMinne(10) == 2"
     assert rack2.noderMedNokMinne(1028) == 0, "Feilet på noderMedNokMinne(1028) == 0"
 
+
+    #############################
+    # tester Regneklynge-klasse
+
     print("Tester settInnNode()")
     testklynge = Regneklynge(1)
     testklynge2 = Regneklynge(2)
@@ -87,6 +92,20 @@ def testFun():
 
     assert testklynge3.antRacks() == 4, "test 4 feilet antRacks  == 4"
 
+    
+
+    testSenter = Datasenter()
+
+    testSenter.lesInnRegneklynge("abel.txt")
+    testSenter.lesInnRegneklynge("saga.txt")
+
+    print("skrive ut klynge abel")
+    testSenter.skrivUtRegneklynge("abel")
+
+    print("skrive ut alle klynger")
+    testSenter.skrivUtAlleRegneklynger()
+
     print("Alle tester kjørt og bestått")
+
 
 testFun()
