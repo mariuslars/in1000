@@ -9,7 +9,7 @@ class Datasenter:
     ## Oppretter et datasenter
     #
     def __init__(self):
-        self._datasenterDict = dict()
+        self._datasenterDict = {}
 
     ## Leser inn data om en regneklynge fra fil og legger
     # den til i ordboken
