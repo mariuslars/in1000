@@ -31,8 +31,10 @@ class Spilleliste:
         for line in open_music_file:
 
             alleData = line.strip().split(";")
+
+            lestSang = Sang(alleData[1], alleData[0])
             #Legger til Sang objekter i spillelisten
-            self._sanger.append(Sang(alleData[1], alleData[0]))
+            self._sanger.append(lestSang)
 
     #Legger til én sang i spillelisten i Spilleliste
     def leggTilSang(self, nySang):

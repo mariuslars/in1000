@@ -30,7 +30,7 @@ class Rack:
 
             numProsessorer += node.antProsessorer()
 
-        return(numProsessorer)
+        return numProsessorer
 
     ## Beregner antall noder i racket med minne over gitt grense
     # @param paakrevdMinne antall GB minne som kreves
@@ -46,4 +46,4 @@ class Rack:
             if node.nokMinne(paakrevdMinne):
                 antallMedNokMinne += 1
 
-        return(antallMedNokMinne)
+        return antallMedNokMinne
