@@ -1,3 +1,10 @@
+""" 
+Testter for klassene:
+- Node
+- Regneklynge
+- Rack
+- Datasenter
+"""
 from node import Node
 from regneklynge import Regneklynge
 from rack import Rack

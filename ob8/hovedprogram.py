@@ -1,3 +1,8 @@
+""" 
+Dette programmet:
+- Etablerer et datasenter
+- Legger til regneklyngene Abel og Saga
+""" 
 from datasenter import Datasenter
 
 def hovedprogram():
