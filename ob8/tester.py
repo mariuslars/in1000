@@ -28,7 +28,7 @@ rack1.settInn(node1)
 rack2.settInn(node1)
 rack2.settInn(node2)
 
-#print("LOL",rack2.getAntNoder())
+
 print("Tester getAntNoder()")
 assert rack1.getAntNoder() == 1, "Feilet på antall noder == 1"
 assert rack2.getAntNoder() == 2, "Feilet på antall noder == 2"

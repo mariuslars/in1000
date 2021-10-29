@@ -4,7 +4,8 @@ class Regneklynge:
     ## Oppretter tom regneklynge for racks med oppgitt maxtall noder/ rack
     # @param noderPerRack max antall noder som kan plasseres i et rack
     def __init__(self, noderPerRack):
-        pass
+        self._regneklyngeListe = []
+        self._maksNoder = int(noderPerRack)
 
     ## Alternativ konstruktor for de som loser oppgave d). Kan ellers ignoreres
     ## Leser data om regneklynge fra fil, bygger datastrukturen.
